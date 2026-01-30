@@ -109,7 +109,7 @@
                       "body": "Converting PDF blobs to JPEG in a serverless environment (Vercel) was challenging. Initial attempt using Poppler (node-poppler) failed because Vercel does not support native binaries (.so, .dll), making it unsuitable for a serverless environment."
                     },
                     {
-                      "title": "2. Generating the Diploma with CSS (Second Attempt)",
+                      "title": "2. Generating the Bachelor of International Tourism certificate with CSS (Second Attempt)",
                       "body": "A second attempt used CSS for the diploma layout and Puppeteer (a Node.js library for headless Chrome) to convert styled HTML to PDF. PDF generation worked but the rendered images appeared blurry and pixelated in the browser, making it unsuitable for production."
                     }
                   ]

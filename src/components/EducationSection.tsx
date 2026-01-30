@@ -7,6 +7,7 @@ interface EducationSectionProps {
 interface Education {
   title: string
   institution: string
+  location?: string
   period: string
   icon?: string
   url?: string
@@ -15,16 +16,18 @@ interface Education {
 function EducationSection({ colors }: EducationSectionProps) {
   const educations: Education[] = [
     {
-      title: 'Web and Mobile App Development',
+      title: 'Web and Mobile App Development Diploma',
       institution: 'Cornerstone Community College of Canada',
-      period: 'Feb 2025 - Present',
+      location: 'Vancouver BC, Canada',
+      period: 'Sept 2022 – Aug 2024',
       icon: '/assets/ciccc-icon.png',
       url: 'https://ciccc.ca/en',
     },
     {
-      title: 'International Tourism',
+      title: 'Bachelor of International Tourism',
       institution: 'Hannan University',
-      period: 'Feb 2025 - Present',
+      location: 'Osaka, Japan',
+      period: 'Apr 2011 – Mar 2015',
       icon: '/assets/hannan-icon.png',
       url: 'https://www.hannan-u.ac.jp/english/',
     },
@@ -74,7 +77,7 @@ function EducationSection({ colors }: EducationSectionProps) {
                   )}
 
                   {/* Education Info */}
-                  <div className="flex-1 flex items-start justify-between gap-4">
+                  <div className="flex-1 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
                     <div>
                       <h3 
                         className="text-xl font-light mb-1"
@@ -88,9 +91,17 @@ function EducationSection({ colors }: EducationSectionProps) {
                       >
                         {education.institution}
                       </p>
+                      {education.location && (
+                        <p 
+                          className="text-base font-light mt-0.5"
+                          style={{ color: colors.secondary.text }}
+                        >
+                          {education.location}
+                        </p>
+                      )}
                     </div>
                     <p 
-                      className="text-base font-light whitespace-nowrap"
+                      className="text-base font-light sm:whitespace-nowrap"
                       style={{ color: colors.secondary.text }}
                     >
                       {education.period}

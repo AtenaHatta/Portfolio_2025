@@ -11,8 +11,8 @@ function ProjectsSection({ colors, standalone = false }: ProjectsSectionProps) {
   const projects = projectsData.projects
     .filter((p) => p.id === 'e-certificate')
     .map((p) => {
-      const sections = p.sections as Record<string, { image?: string }> | undefined
-      const image = sections?.['product-overview']?.image
+      const projectWithTop = p as { topImage?: string; sections?: Record<string, { image?: string }> }
+      const image = projectWithTop.topImage ?? projectWithTop.sections?.['product-overview']?.image
       return {
         id: p.id,
         type: p.type,
@@ -96,7 +96,8 @@ function ProjectsSection({ colors, standalone = false }: ProjectsSectionProps) {
               ))}
             </div>
 
-            {/* View more Link */}
+            {/* View more Link (home のみ表示、/project では非表示) */}
+            {!standalone && (
             <div className="flex justify-end">
               <Link
                 to="/project"
@@ -120,6 +121,7 @@ function ProjectsSection({ colors, standalone = false }: ProjectsSectionProps) {
                 </svg>
               </Link>
             </div>
+            )}
           </div>
         </div>
       </div>

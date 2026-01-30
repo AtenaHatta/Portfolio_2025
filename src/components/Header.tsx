@@ -113,27 +113,6 @@ function Header({ isDarkMode, toggleDarkMode, colors }: HeaderProps) {
               </svg>
             )}
           </button>
-
-          {/* Language/Globe Icon */}
-          <button
-            className="p-2 rounded-lg hover:opacity-70 transition-opacity"
-            style={{ color: colors.background.text }}
-            aria-label="Language selection"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={1.5}
-            >
-              <circle cx="12" cy="12" r="10" />
-              <line x1="2" y1="12" x2="22" y2="12" />
-              <line x1="12" y1="2" x2="12" y2="22" />
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-            </svg>
-          </button>
         </div>
       </nav>
 
